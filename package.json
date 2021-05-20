@@ -1,0 +1,39 @@
+{
+  "name": "inline-react",
+  "version": "0.0.1",
+  "module": "dist/inline-react.es2017-esm.js",
+  "main": "dist/inline-react.es5-umd.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist/*.js",
+    "dist/*.js.map",
+    "dist/types/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manastyretskyi/inline-react.git"
+  },
+  "author": "manastyretskyi <manastyretskyi@gmail.com> (www.manastyretskyi.com)",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -fr dist",
+    "build": "tsc --noEmit false --declaration true --emitDeclarationOnly true --outDir dist/types && rollup -c",
+    "watch": "rollup -wc",
+    "start": "node src/tests/runner.js serveOnly",
+    "test": "NODE_OPTIONS=--inspect node src/tests/runner.js"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.6",
+    "@types/react-dom": "^17.0.5",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "intern": "^4.9.0",
+    "rollup": "^2.48.0",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  }
+}
